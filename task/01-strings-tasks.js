@@ -23,7 +23,6 @@
  */
 function concatenateStrings(value1, value2) {
     return value1+value2;
-    throw new Error('Not implemented');
 }
 
 
@@ -40,7 +39,6 @@ function concatenateStrings(value1, value2) {
  */
 function getStringLength(value) {
     return value.length;
-    throw new Error('Not implemented');
 }
 
 /**
@@ -58,7 +56,6 @@ function getStringLength(value) {
  */
 function getStringFromTemplate(firstName, lastName) {
     return `Hello, ${firstName} ${lastName}!`;
-    throw new Error('Not implemented');
 }
 
 /**
@@ -74,7 +71,6 @@ function getStringFromTemplate(firstName, lastName) {
 function extractNameFromTemplate(value) {
     var res = value.substring(7, value.length-1);
     return res;
-    throw new Error('Not implemented');
 }
 
 
@@ -90,7 +86,6 @@ function extractNameFromTemplate(value) {
  */
 function getFirstChar(value) {
     return value[0];
-    throw new Error('Not implemented');
 }
 
 /**
@@ -106,7 +101,6 @@ function getFirstChar(value) {
  */
 function removeLeadingAndTrailingWhitespaces(value) {
     return value.replace(/^\s*/,'').replace(/\s*$/,'');
-    throw new Error('Not implemented');
 }
 
 /**
@@ -126,7 +120,6 @@ function repeatString(value, count) {
         res = res + value; 
     }
     return res;
-    throw new Error('Not implemented');
 }
 
 /**
@@ -143,7 +136,6 @@ function repeatString(value, count) {
  */
 function removeFirstOccurrences(str, value) {
     return str.replace(value,'');
-    throw new Error('Not implemented');
 }
 
 /**
@@ -160,7 +152,6 @@ function removeFirstOccurrences(str, value) {
 function unbracketTag(str) {
     var res = str.replace("<",'');
     return res.replace(">",'');
-    throw new Error('Not implemented');
 }
 
 
@@ -176,7 +167,6 @@ function unbracketTag(str) {
  */
 function convertToUpperCase(str) {
     return str.toUpperCase();
-    throw new Error('Not implemented');
 }
 
 /**
@@ -191,7 +181,6 @@ function convertToUpperCase(str) {
  */
 function extractEmails(str) {
     return str.split(';');
-    throw new Error('Not implemented');
 }
 
 /**
@@ -218,18 +207,11 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    // var str = '┌┐\n'+
-    //           '└┘\n';
-    // for (var i=1; i<width-1; i++) {
-    //     str=str.replace("┌",'┌─');  
-    //     str=str.replace("└",'└─'); 
-    // }
-    // for (var i=1; i<height-1; i++) {
-    //     str=str.replace("┌",'┌─');  
-    //     str=str.replace("└",'└─'); 
-    // }
-    // return str;
-    throw new Error('Not implemented');
+    var arr = [];
+    arr.push(`┌${'─'.repeat(width - 2)}┐\n`);
+    arr.push(`│${' '.repeat(width - 2)}│\n`.repeat(height - 2));
+    arr.push(`└${'─'.repeat(width - 2)}┘\n`);
+    return arr.join('');
 }
 
 
@@ -260,7 +242,6 @@ function encodeToRot13(str) {
         }
     }
     return res;
-    throw new Error('Not implemented');
 }
 
 /**
@@ -277,12 +258,9 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    // if (typeof(value) == "string") {
-    //     return true;
-    // } else {
-    //     return false;
-    // }
-    throw new Error('Not implemented');
+    if (value instanceof String) return true;
+	if (typeof value ==='string') return true;
+	else return false;
 }
 
 
